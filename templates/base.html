@@ -1,0 +1,43 @@
+﻿<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - My Favourite City</title>
+    {% else %}
+    <title>Мои любимые города</title>
+    {% endif %}
+<style>
+   body{
+    background: linear-gradient(to top, #ccdbf0, #4b52b4);
+   } 
+   h1 {
+    background-color: RGB(249, 201, 16);
+   }
+
+   h2 {
+    background-color: transparent
+}
+  </style>
+  </head>
+  <body>
+    <div><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/NYC_Top_of_the_Rock_Pano.jpg" width="100%"  height="150" alt="New York">
+     <h2>Site about cities: <a href="{{ url_for('index') }}">Home</a></h2>
+    </div>
+    <hr>
+<ul>
+     <li><a href="/index">Home Page - New York</a></li>
+     <li><a href="/lasvegas">Las Vegas</a></li>
+     <li><a href="/panama">Panama City</a></li>
+</ul>
+    {% block content %}{% endblock %}
+     {% block footer %}
+  <style>
+   .gradient {
+    background: linear-gradient(to top, #b7d1df, #5aff00);
+    padding: 15px;
+    border: 1px solid #333;
+   }
+  </style>
+      <p align="center" class="gradient">&copy; Copyright 2015 by <a href="/">City News</a>.</p>
+      {% endblock %}
+  </body>
+</html>
